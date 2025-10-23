@@ -1,2 +1,0 @@
-# allegro-tutorial
-allegro tutorial
