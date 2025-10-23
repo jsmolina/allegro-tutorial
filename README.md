@@ -1,5 +1,5 @@
 ## What's this?
-This is a simple basic repository for allegro 4, dockerized to ease compiling the dat files, and including a working example of loading a background a moving a sprite with a spritesheet over screen.
+This is a simple basic repository for allegro 4, dockerized to ease compiling dat files, and including a working example of loading a background a moving a sprite with a spritesheet over screen. 
 
 Relevant files:
 
@@ -7,6 +7,7 @@ Relevant files:
 2. `build.sh`: The script that should include all your statics (bmp, tiled files, ...).
 3. `main.c`: the game entry, loads things, main loop, clean things. When you create your game, you should create extra C and H files, of course.
 
+* What does it generate? MS-DOS executable + datafile
 
 * How is it possible that my bmps look horrible and yours are ok? Allegro expects indexed bmps, so better use Aseprite/Libresprite and select Mode X palette before exporting.
 
