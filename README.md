@@ -12,6 +12,8 @@ Relevant files:
 * How is it possible that my bmps look horrible and yours are ok? Allegro expects indexed bmps, so better use Aseprite/Libresprite and select Mode X palette before exporting.
 * I don't have docker compose, what's that? you should learn about docker, it's great: https://www.docker.com/
 
+<img width="603" height="449" alt="image" src="https://github.com/user-attachments/assets/76532012-73a1-492c-b446-9c82a0b5b442" />
+
 ## Compiling
 
 Compile with
