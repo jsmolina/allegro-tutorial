@@ -10,6 +10,7 @@ Relevant files:
 * What does it generate? MS-DOS executable + datafile
 
 * How is it possible that my bmps look horrible and yours are ok? Allegro expects indexed bmps, so better use Aseprite/Libresprite and select Mode X palette before exporting.
+* I don't have docker compose, what's that? you should learn about docker, it's great: https://www.docker.com/
 
 ## Compiling
 
