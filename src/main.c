@@ -47,6 +47,7 @@ int main(void) {
     if (allegro_init() != 0)
         return 1;
     install_keyboard();
+    
 
     if (set_gfx_mode(GFX_MODEX, 320, 240, 320, 240) != 0) {
         set_gfx_mode(GFX_TEXT, 0, 0, 0, 0);
@@ -54,6 +55,12 @@ int main(void) {
                         "virtual dimensions\n");
         return 1;
     }
+
+    if (install_sound(DIGI_AUTODETECT, MIDI_AUTODETECT, "./allegro.cfg") != 0) {
+        printf("cannot init sound!");
+        exit(1);
+    }
+
     set_color_depth(8);
     set_color_conversion(COLORCONV_NONE);
 
