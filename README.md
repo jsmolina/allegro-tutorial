@@ -4,7 +4,7 @@ This is a simple basic repository for allegro 4, dockerized to ease compiling da
 Relevant files:
 
 1. `statics.h`: Lists all data.dat files.
-2. `build.sh`: The script that should include all your statics (bmp, tiled files, ...).
+2. `build.sh`: The script that should include all your statics (bmp, tiled files, wav, mid ...).
 3. `main.c`: the game entry, loads things, main loop, clean things. When you create your game, you should create extra C and H files, of course.
 
 * What does it generate? MS-DOS executable + datafile
