@@ -11,6 +11,7 @@ Relevant files:
 
 * How is it possible that my bmps look horrible and yours are ok? Allegro expects indexed bmps, so better use Aseprite/Libresprite and select Mode X palette before exporting.
 * I don't have docker compose, what's that? you should learn about docker, it's great: https://www.docker.com/
+* Can I use my own palette? sure, I used it on `rio-inmaculado`, but be sure to use the same palette on the current screen for everything you draw on it.
 
 <img width="603" height="449" alt="image" src="https://github.com/user-attachments/assets/76532012-73a1-492c-b446-9c82a0b5b442" />
 
@@ -24,4 +25,10 @@ Generate docker image
 Does two steps:
 1. Wake up docker, generates and copies `statics.h` and `datos.dat`.
 2. Compile code in src.
+
+## Recommended tools
+* Aseprite / Libresprite. THE TOOL. I won't recommend at all using gimp for Allegro, as allegro 4 expects indexed bitmaps.
+* Tiled: you could generate 8x8 tiles from aseprite, and then compose them to generate an uniform map.
+
+  
 
