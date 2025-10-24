@@ -31,4 +31,25 @@ Does two steps:
 * Tiled: you could generate 8x8 tiles from aseprite, and then compose them to generate an uniform map.
 
   
+## A bit of context
+Docker is a tool that lets you create and run applications inside containers.
+A container is like a tiny self-contained computer that already includes everything your program needs to run: the operating system, libraries, compilers, and dependencies.
 
+Instead of manually setting up your local machine (and risking version conflicts or configuration headaches), Docker packages the entire environment into a reusable image.
+
+Working with Allegro 4 (an old graphics and audio library) can be painful today:
+
+* Dependencies are outdated and often hard to compile on modern systems.
+* Compiler and library versions differ between platforms.
+* Setting everything up correctly can take hours or even days.
+
+Docker solves all that:
+
+* The container already includes Allegro 4 and DJGPP, build tools, and all required dependencies.
+* You can build games for MS-DOS from any modern computer (Windows, macOS, Linux) with zero local setup.
+* Every developer gets exactly the same build environment, so the results are consistent across machines.
+
+While the project isn’t meant to be a full framework like CPCtelera or The Mojon Twins’ Churrera, it does serve as a boilerplate:
+* It provides a basic Allegro 4 game structure — folders, Makefile, assets, and minimal code.
+* It defines the Docker build environment, so anyone can start developing instantly.
+* It lets you focus on making the game, not fighting with compilers or dependencies.
