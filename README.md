@@ -1,55 +1,69 @@
 ## What's this?
-This is a simple basic repository for allegro 4, dockerized to ease compiling dat files, and including a working example of loading a background a moving a sprite with a spritesheet over screen. 
+This repository provides a **ready-to-use boilerplate** for building MS-DOS games using Allegro 4 and a Dockerized environment.  
+You’ll get:
+- A minimal working example: loading a background, animating a sprite from a spritesheet, rendering the game loop.  
+- A Docker setup so you don’t spend hours fighting with old dependencies, compilers or OS configs.  
+- A clean folder structure and starter build scripts so you can focus on **making the game**, not setting up the toolchain.
 
-Relevant files:
+## Why use Docker for Allegro 4?  
+Modern systems often struggle with Allegro 4‘s vintage toolchain:
+- Compiler versions and libraries have changed a lot; setting things up manually is error-prone.  
+- Old MS-DOS-targeted builds (via DJGPP) require specific configurations. And datfiles are a nightmare.
+- You want to build under the *same conditions*, reproducible on any platform (Windows, macOS, Linux).
 
-1. `statics.h`: Lists all data.dat files.
-2. `build.sh`: The script that should include all your statics (bmp, tiled files, wav, mid ...).
-3. `main.c`: the game entry, loads things, main loop, clean things. When you create your game, you should create extra C and H files, of course.
+## 🏗 What the boilerplate gives you  
+- `src/` folder: example C source (`main.c`) showing initialization, loading, game loop, cleanup.  
+- `static/` folder: assets (bitmaps, sprites, tiles, sound).  
+- `build.sh` (or equivalent): script to collect assets, generate `statics.h`, compile, link and produce output (MS-DOS .exe + data file).  
+- `Dockerfile` + `docker-compose.yaml`: pre-configured container environment.  
+- `statics.h`: automatically generated header listing all data files to be included.  
 
-* What does it generate? MS-DOS executable + datafile
+## Getting Started  
+1. Install [Docker](https://www.docker.com) and Docker Compose if you haven’t already.  
+2. In project root run:  
+   ```bash
+   docker-compose build   # builds the Docker image  
+   docker-compose up      # runs asset generation + compilation
+   ```
+3. After success you’ll get an MS-DOS-compatible executable and the data.dat (or equivalent) data file.
 
-* How is it possible that my bmps look horrible and yours are ok? Allegro expects indexed bmps, so better use Aseprite/Libresprite and select Mode X palette before exporting.
-* I don't have docker compose, what's that? you should learn about docker, it's great: https://www.docker.com/
-* Can I use my own palette? sure, I used it on `rio-inmaculado`, but be sure to use the same palette on the current screen for everything you draw on it.
+4. Open src/main.c to see how the game loop works. Copy/extend it for your own game logic, add new C/H files, new assets, etc.
 
-<img width="603" height="449" alt="image" src="https://github.com/user-attachments/assets/76532012-73a1-492c-b446-9c82a0b5b442" />
+5. For assets: prefer tools like Aseprite / LibreSprite, and export indexed bitmaps (mode X palette) to satisfy Allegro 4’s expectations.
 
-## Compiling
+7. You can replace the palette with your own (used for older ports like “Rio Inmaculado”); just ensure consistency across all bitmaps and the screen mode.
 
-Compile with
-* `docker-compose build`
-Generate docker image
+## Asset Tips
 
-* `docker-compose up`
-Does two steps:
-1. Wake up docker, generates and copies `statics.h` and `datos.dat`.
-2. Compile code in src.
+* Allegro 4 expects indexed BMPs (not full RGB) when using mode X or 256-colour modes. Otherwise colours may look wrong.
+* Use Aseprite / LibreSprite: set the palette to your target 256 colours, design your sprites/tiles, then export with “Indexed + Mode X” or equivalent.
+* Use a tilemap editor (e.g., Tiled) to build backgrounds from 8 × 8 tiles exported from your sprite tool.
+* When you adopt your own palette: make sure all screens, bitmaps and tiles reference the same palette. Mixing palettes leads to palette flicker or bad rendering.
 
-## Recommended tools
-* Aseprite / Libresprite. THE TOOL. I won't recommend at all using gimp for Allegro, as allegro 4 expects indexed bitmaps.
-* Tiled: you could generate 8x8 tiles from aseprite, and then compose them to generate an uniform map.
 
+## Folder Structure
+/
+├── Dockerfile
+├── docker-compose.yaml
+├── build.sh / Makefile
+├── statics.h               ← auto-generated
+├── data.dat                ← compiled game data
+├── src/
+│   └── main.c
+├── static/
+│   ├── sprites/
+│   └── tiles/
+│   └── sounds/
+└── README.md
+
+## License & Contributions
+
+Feel free to fork this repository, modify the boilerplate for your own MS-DOS game projects, and contribute back improvements (asset pipelines, more game-loop examples, cross-platform testing).
+If you make major improvements, submitting a pull request is welcome.
+
+## Final Note
+
+This is not a full game engine like CPCtelera or Churrera from The Mojon Twins — it’s a starting point.
+Use it as a scaffold: tweak it, build your game logic on top, plug in assets, and you’re ready to go from zero to playable faster.
   
-## A bit of context
-Docker is a tool that lets you create and run applications inside containers.
-A container is like a tiny self-contained computer that already includes everything your program needs to run: the operating system, libraries, compilers, and dependencies.
 
-Instead of manually setting up your local machine (and risking version conflicts or configuration headaches), Docker packages the entire environment into a reusable image.
-
-Working with Allegro 4 (an old graphics and audio library) can be painful today:
-
-* Dependencies are outdated and often hard to compile on modern systems.
-* Compiler and library versions differ between platforms.
-* Setting everything up correctly can take hours or even days.
-
-Docker solves all that:
-
-* The container already includes Allegro 4 and DJGPP, build tools, and all required dependencies.
-* You can build games for MS-DOS from any modern computer (Windows, macOS, Linux) with zero local setup.
-* Every developer gets exactly the same build environment, so the results are consistent across machines.
-
-While the project isn’t meant to be a full framework like CPCtelera or The Mojon Twins’ Churrera, it does serve as a boilerplate:
-* It provides a basic Allegro 4 game structure — folders, Makefile, assets, and minimal code.
-* It defines the Docker build environment, so anyone can start developing instantly.
-* It lets you focus on making the game, not fighting with compilers or dependencies.
