@@ -55,6 +55,7 @@ Modern systems often struggle with Allegro 4‘s vintage toolchain:
 │   ├── sprites/
 │   └── tiles/
 │   └── sounds/
+├── build_project.sh         ← compiles
 └── README.md
 ```
 ## License & Contributions
