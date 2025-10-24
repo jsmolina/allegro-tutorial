@@ -42,6 +42,7 @@ Modern systems often struggle with Allegro 4‘s vintage toolchain:
 
 
 ## Folder Structure
+```
 /
 ├── Dockerfile
 ├── docker-compose.yaml
@@ -55,7 +56,7 @@ Modern systems often struggle with Allegro 4‘s vintage toolchain:
 │   └── tiles/
 │   └── sounds/
 └── README.md
-
+```
 ## License & Contributions
 
 Feel free to fork this repository, modify the boilerplate for your own MS-DOS game projects, and contribute back improvements (asset pipelines, more game-loop examples, cross-platform testing).
