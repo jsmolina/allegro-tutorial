@@ -75,7 +75,7 @@ int main(void) {
     // cat spritesheet
     BITMAP *cat_spritesheet = dat_file[CAT_BMP].dat;
     BITMAP *sp_cat[CAT_FRAMES];
-    int frame_width = (int) cat_spritesheet->w / 2;
+    int frame_width = (int) cat_spritesheet->w / CAT_FRAMES;
     for (int i = 0; i < CAT_FRAMES; i++) {
         sp_cat[i] = create_sub_bitmap(cat_spritesheet, i * frame_width, 0, frame_width, cat_spritesheet->h);        
     }
