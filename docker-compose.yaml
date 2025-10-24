@@ -1,6 +1,6 @@
 # docker-compose.yml
 services:
-  build_pieldetoro_dat:
+  build_example_dat:
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,13 +11,13 @@ services:
     working_dir: /compile
     command: /bin/bash -c -e "./build.sh  "
 
-  build_pieldetoro_exe:
+  build_example_exe:
     build:
       context: .
       dockerfile: Dockerfile
     image: build_pieldetoro
     depends_on:
-      build_pieldetoro_dat:
+      build_example_dat:
         condition: service_completed_successfully
     volumes:
       - ./src:/compile/src         # Codigo fuente
