@@ -65,6 +65,6 @@ If you make major improvements, submitting a pull request is welcome.
 ## Final Note
 
 This is not a full game engine like CPCtelera or Churrera from The Mojon Twins — it’s a starting point.
-Use it as a scaffold: tweak it, build your game logic on top, plug in assets, and you’re ready to go from zero to playable faster.
+Use it as a scaffold: tweak it, build your game logic on top, plug in assets, and you’re ready to go from zero to playable.
   
 
