@@ -46,7 +46,7 @@ Modern systems often struggle with Allegro 4‘s vintage toolchain:
 /
 ├── Dockerfile
 ├── docker-compose.yaml
-├── build.sh / Makefile
+├── build.sh                ← add any of your assets to this file to include in data file
 ├── statics.h               ← auto-generated
 ├── data.dat                ← compiled game data
 ├── src/
