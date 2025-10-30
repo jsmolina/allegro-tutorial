@@ -5,6 +5,8 @@ You’ll get:
 - A Docker setup so you don’t spend hours fighting with old dependencies, compilers or OS configs.  
 - A clean folder structure and starter build scripts so you can focus on **making the game**, not setting up the toolchain.
 
+Archived in https://hub.docker.com/r/dontbugster/allegro-builder
+
 ## Why use Docker for Allegro 4?  
 Modern systems often struggle with Allegro 4‘s vintage toolchain:
 - Compiler versions and libraries have changed a lot; setting things up manually is error-prone.  
