@@ -1,4 +1,6 @@
 ## What's this?
+A working allegro 4 packager and compiler, for any OS.
+
 This repository provides a **ready-to-use boilerplate** for building MS-DOS games using Allegro 4 and a Dockerized environment.  
 You’ll get:
 - A minimal working example: loading a background, animating a sprite from a spritesheet, rendering the game loop.  
