@@ -9,6 +9,13 @@ You’ll get:
 
 Archived in https://hub.docker.com/r/dontbugster/allegro-builder
 
+
+See video
+
+
+https://github.com/user-attachments/assets/fea693ff-0177-4f7e-bcf8-272fa559f710
+
+
 ## Why use Docker for Allegro 4?  
 Modern systems often struggle with Allegro 4‘s vintage toolchain:
 - Compiler versions and libraries have changed a lot; setting things up manually is error-prone.  
